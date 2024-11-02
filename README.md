@@ -17,7 +17,7 @@ This tutorial outlines the prerequisites and installation of the open-source hel
 
 <h2>Installation Steps</h2>
 <p>
-Once the Windows 10 VM has been set up in Azure, log into the machine with your credentials. It is best to create a notepad and save a copy of any credentials used along the way for this lab, as there'll be many.
+Once the Windows 10 VM has been set up in Azure, log into the machine with your credentials. 
 Within the VM, open the Microsoft Edge web browser and download <a href= https://drive.google.com/uc?export=download&id=1b3RBkXTLNGXbibeMuAynkfzdBC1NnqaD>osTicket-Installation-Files.zip</a>. Extract the files and you should see the following.
 
 </p>
@@ -29,7 +29,7 @@ Within the VM, open the Microsoft Edge web browser and download <a href= https:/
 
 
 <p>
-Now we'll need to enable Internet Information Services. You can search for Control Panel in the search bar at the bottom, then click Uninstall a Program, then Turn Windows features on or off, then check the box next to Internet Information Services. We'll also need to enable CGI under World Wide Wide Services -> Application Development Features.
+Now we need to enable Internet Information Services. Click Uninstall a Program, then Turn Windows features on or off, check the box next to Internet Information Services. We'll also need to enable CGI under World Wide Wide Services -> Application Development Features.
 </p>
 <br />
 
@@ -38,14 +38,14 @@ Now we'll need to enable Internet Information Services. You can search for Contr
 </p>
 <br/>
 <p>
-Once that's done, we can install the PHP manager for IIS. Open on the file and click OK to all the default selections. Do the same thing for the rewrite modules (rewrite_amd64 file).
+Now nstall the PHP manager for IIS. Open on the file and click OK to all the default selections. 
 </p>
 <img src="https://i.imgur.com/Uh4Zwlj.png" height="80%" width="80%" alt="install php manager and rewrite"/>
 
 <br />
 
 <p>
-Now we'll create a directory in C:\ called PHP, basically C:\PHP. Click on the folder at the bottom the Taskbar or search for File Explorer. This is so that we can extract the zipped PHP folder into this new directory and allow osTicket to work with PHP.
+Next we create a directory in C:\ called PHP, basically C:\PHP. Click on the folder at the bottom the Taskbar or search for File Explorer. This is so that we can extract osTicket to work with PHP.
 </p>
 <p>
   <img src="https://i.imgur.com/BCMLUId.png" height="80%" width="80%" alt="extract php to c php"/>
@@ -95,14 +95,14 @@ Reload IIS again. On the left side pane, go to Sites, click the down arrow until
 </p>
 <br/>
 <p>
-Now we'll need to enable some extensions. Go back to the osTicket folder on the left side pane and then click on PHP manager in the middle pane. Click on Enable or disable an extension and you'll need to enable php_imap.dll, php_intl.dll and php_opcache.dll. Refresh the osTicket webpage and it should be updated.
+Next we need to enable some extensions. Go back to the osTicket folder on the left side pane and then click on PHP manager in the middle pane. Click on Enable or disable an extension and you'll need to enable php_imap.dll, php_intl.dll and php_opcache.dll. Refresh the osTicket webpage and it should be updated.
 </p>
 <p>
   <img src="https://i.imgur.com/87i9Gxs.png" height="80%" width="80%" alt="updated osticket landing page"/>
 </p>
 <br/>
 <p>
-Now we have to rename C:\inetpub\wwwroot\osTicket\include\ost-sampleconfig.php to C:\inetpub\wwwroot\osTicket\include\ost-config.php. Then we'll need to change permissions for this file. Right click on this and then Properties -> Security tab -> Advanced -> Disable inheritance (remove option) -> Add -> Select a principal -> Type everyone in the box -> Check names -> OK. Make sure you click on Full control as well.
+Now rename C:\inetpub\wwwroot\osTicket\include\ost-sampleconfig.php to C:\inetpub\wwwroot\osTicket\include\ost-config.php. Then we need to change permissions for this file. Right click on this and then Properties -> Security tab -> Advanced -> Disable inheritance (remove option) -> Add -> Select a principal -> Type everyone in the box -> Check names -> OK. Make sure you click on Full control as well.
 </p>
 <p>
   <img src="https://i.imgur.com/wABTm3C.png" height="80%" width="80%" alt="ost config permissions"/>
