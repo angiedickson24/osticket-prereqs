@@ -17,8 +17,7 @@ This tutorial outlines the prerequisites and installation of the open-source hel
 
 <h2>Installation Steps</h2>
 <p>
-Once the Windows 10 VM has been set up in Azure, log into the machine with your credentials. 
-Within the VM, open the Microsoft Edge web browser and download <a href= https://drive.google.com/uc?export=download&id=1b3RBkXTLNGXbibeMuAynkfzdBC1NnqaD>osTicket-Installation-Files.zip</a>. Extract the files and you should see the following.
+After setting up the Windows 10 VM in Azure, log in with your credentials. Open Microsoft Edge, download osTicket-Installation-Files.zip, and extract the files. You should then see the contents.
 
 </p>
 <br />
@@ -29,7 +28,7 @@ Within the VM, open the Microsoft Edge web browser and download <a href= https:/
 
 
 <p>
-Now we need to enable Internet Information Services. Click Uninstall a Program, then Turn Windows features on or off, check the box next to Internet Information Services. We'll also need to enable CGI under World Wide Wide Services -> Application Development Features.
+Next, enable Internet Information Services (IIS). Go to Uninstall a Program, select Turn Windows features on or off, and check the box for Internet Information Services. Then, under World Wide Web Services -> Application Development Features, enable CGI.
 </p>
 <br />
 
@@ -95,8 +94,7 @@ Reload IIS again. On the left side pane, go to Sites, click the down arrow until
 </p>
 <br/>
 <p>
-Next we need to enable some extensions. Go back to the osTicket folder on the left side pane and then click on PHP manager in the middle pane. Click on Enable or disable an extension and you'll need to enable php_imap.dll, php_intl.dll and php_opcache.dll. Refresh the osTicket webpage and it should be updated.
-</p>
+Now, enable some extensions. In the osTicket folder, select PHP Manager in the middle pane. Click Enable or disable an extension, and enable php_imap.dll, php_intl.dll, and php_opcache.dll. Then refresh the osTicket webpage to see the updates.
 <p>
   <img src="https://i.imgur.com/87i9Gxs.png" height="80%" width="80%" alt="updated osticket landing page"/>
 </p>
@@ -109,13 +107,15 @@ Now rename C:\inetpub\wwwroot\osTicket\include\ost-sampleconfig.php to C:\inetpu
 </p>
 <br/>
 <p>
-Now back to osTicket on the browser, click Continue and fill in the details that you want to use as login and password for the helpdesk system. The only caveat is the MySQL database name is osTicket and the username and password must be root and root. Before clicking continue on this, go back to the original extracted folder and install HeidiSQL. Accept all defaults and when it comes to creating a new session, select new and then login into the sql database with root and root credentials. Then right click on Unnamed -> Create new -> Database. The name must be exactly osTicket.
+In the osTicket browser window, click Continue and enter your chosen login and password for the helpdesk system. Ensure the MySQL database name is osTicket, with both username and password as root.
+
+Before proceeding, go to the extracted folder and install HeidiSQL. Use the default settings, then create a new session and log in to the SQL database with root/root. Right-click on Unnamed, select Create new -> Database, and name it exactly osTicket.
 </p>
 <p>
   <img src="https://i.imgur.com/Lfw0PXJ.png" height="80%" width="80%" alt="heidisql"/>
   <img src="https://i.imgur.com/pWKEjjz.png" height="80%" width="80%" alt="create new database in heidisql"/>
 </p>
-Continue with the installation of osTicket in the browser by clicking Install Now. You should now seeing the page telling you that osTicket is finally installed and all the links to login into the osTicket as a general user (http://localhost/osTicket) or as staff (http://localhost/osTicket/scp).
+In the browser, click Install Now to complete the osTicket installation. You should then see a confirmation page with links to log into osTicket as a general user (http://localhost/osTicket) or as staff (http://localhost/osTicket/scp).
 <br/>
 <p>
    <img src="https://i.imgur.com/CBKO7Qs.png" height="80%" width="80%" alt="osticket installed"/>
